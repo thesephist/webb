@@ -28,5 +28,5 @@ The full Webb stack has two main parts:
 
 The SVG generator runs as a NodeJS application.
 
-Within the ruby script, __$network__ dictates the beginning network strengths, with the connection strength from node _i_ to node _j__ defined by $network\[i\]\[j\]. 
+Within the ruby script, __$network__ dictates the beginning network strengths, with the connection strength from node _i_ to node _j_ defined by $network\[i\]\[j\]. 
 

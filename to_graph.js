@@ -12,7 +12,7 @@ var fs = require('fs'),
 // Taking matrix input file, parse variables
 
 // for now, for testing
-var result = "Matrix[[0.6384428021826762, 0.7889099532947753, 0.6844263468335854], [0.8092720842427029, 1.0, 0.8675595281504207], [0.6620280027908653, 0.8180536752486341, 0.7097102605004222]]"
+var result = "Matrix[[1.0, 0.577350269189626, 0.5773502691896258, 0.5773502691896258], [0.577350269189626, 0.33333333333333354, 0.3333333333333334, 0.3333333333333335], [0.5773502691896258, 0.3333333333333334, 0.33333333333333337, 0.3333333333333334], [0.5773502691896258, 0.3333333333333335, 0.3333333333333334, 0.3333333333333334]]";
 result = result.substring(8,result.length - 2); // so in the form "1.0, 1.0, 1.0], [1.0, 1.0, 1.0" and so on
 
 var resultArray = result.split("], ["); // so each element in the form 1.0, 1.0, 1.0 and so on
@@ -26,7 +26,7 @@ pop_size = resultArray.length;
 // have node coordinates put in array of duples
 var angle = Math.PI / pop_size * 2;
 for(i=0;i<pop_size;i++){
-    node_coords.push([500 + 500 * Math.sin(angle * i).toString(), 500 - 500 * Math.cos(angle * i).toString()]);
+    node_coords.push([500 - 500 * Math.sin(angle * i).toString(), 500 - 500 * Math.cos(angle * i).toString()]);
 }
 
 // have segment startNode, endNode, strength in array, will resolve node coordinates from node list
@@ -38,7 +38,6 @@ for(i=0; i<pop_size; i++){
         links[i][j] = parseFloat(links[i][j]);
     }
 }
-console.log(links);
 for(i=0; i<pop_size; i++){
     for(j=0; j<pop_size; j++){
         links[i][j] = Math.sqrt(linkc[i][j] * linkc[j][i]);
@@ -53,6 +52,9 @@ for(i=0; i<pop_size; i++){
         }
     }
 }
+
+console.log(maximum + " - " + minimum);
+console.log(linkc);
 
 // will write SVG line by line
 SVGlines = ["<svg xmlns='http://www.w3.org/2000/svg' version='1.0' viewBox='0 0 1000 1000'>"];
@@ -72,7 +74,7 @@ for(i=0;i<pop_size;i++){
 // write nodes later
 SVGlines.push("<!-- nodes -->");
 node_coords.forEach(function(coord){
-    SVGlines.push("<circle cy='" + coord[1] + "' cx='" + coord[0] + "' r='5' style='fill:#5200A3'/>");
+    SVGlines.push("<circle cy='" + coord[1] + "' cx='" + coord[0] + "' r='10' style='fill:#5200A3'/>");
 });
 
 // below is all good, writing to files everything front-back

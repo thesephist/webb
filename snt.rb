@@ -11,14 +11,16 @@
 require 'matrix'
 
 $network = Matrix[
-  [1.0, 1.0, 1.0],
-  [1.0, 1.0, 1.0],
-  [1.0, 1.0, 1.0]
+  [1.0, 1.0, 1.0, 1.0],
+  [1.0, 1.0, 0.0, 0.0],
+  [1.0, 0.0, 1.0, 0.0],
+  [1.0, 0.0, 0.0, 1.0]
 ]
 $normals = Matrix[
-  [1.0,1.0,1.0],
-  [1.0,1.0,1.0],
-  [1.0,1.0,1.0]
+  [1.0,1.0,1.0,1.0],
+  [1.0,1.0,1.0,1.0],
+  [1.0,1.0,1.0,1.0],
+  [1.0,1.0,1.0,1.0]
 ]
 Size = $network.to_a.length
 Accuracy = 1.0 # how strong the peturbation is; the greater the better, scale of 0 to 1
@@ -73,8 +75,9 @@ def normalize()
 end
 
 for i in 0..5 do
-  puts $network.to_s
   iterate()
   normalize()
 end
+
+puts $network.to_s
 

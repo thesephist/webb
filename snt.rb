@@ -1,9 +1,4 @@
 #!/usr/bin/ruby
-
-# Two things of note:
-# 1. Assumed decay of all connections when not boosted by others
-# 2. Connections from others create self-connections: a.k.a. friends increase self-esteem.
-
 # Linus Lee
 # linus@thelifelongtraveler.com
 # webb - social network simulation software
@@ -22,13 +17,14 @@ $normals = Matrix[
   [1.0,1.0,1.0,1.0],
   [1.0,1.0,1.0,1.0]
 ]
+
 Size = $network.to_a.length
-Accuracy = 1.0 # how strong the peturbation is; the greater the better, scale of 0 to 1
+Accuracy = 1.to_f # how strong the peturbation is; the greater the better, scale of 0 to 1
 Peturb_to = Accuracy * Size.to_f
 
 #init commands
-$loopSum = 0.0 # float, global for usage
-$loopNormalSum = 0.0 # normalizer
+$loopSum = 0.to_f # float, global for usage
+$loopNormalSum = 0.to_f # normalizer
 
 def evolve(node1,node2,order)
   # evolving individual units
@@ -73,6 +69,8 @@ def normalize()
   end
   $network = Matrix.build(Size) {|row,col| setArray[row][col]}
 end
+
+puts $network.to_s
 
 for i in 0..5 do
   iterate()

@@ -54,6 +54,9 @@ for(i=0; i<pop_size; i++){
     }
 }
 
+console.log("Minimum: " + minimum);
+console.log("Maximum: " + maximum);
+
 // will write SVG line by line
 SVGlines = ["<svg xmlns='http://www.w3.org/2000/svg' version='1.0' viewBox='0 0 1000 1000'>"];
 

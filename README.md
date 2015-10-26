@@ -10,12 +10,6 @@ _Perfect social networks_ are networks without any external or random factors, w
 
 Webb's core model is a perturbation model, where the strength of a connection between A and B in a social network is dictated most by the connection between A and B the period before, then slightly less by the connections between A, B, and a third party the generation, and so on for 2, 3, 4, etc. third party nodes. Webb uses a matrix model to simulate this behavior.
 
-## Uniformity Factor
-
-Each iteratino of an evolution of the Webb algorithm yields a floating point value uniformity factor describing the behavior of the network at that iteration
-
-The uniformity factor is defined as _the geometric mean of connections strengthened divided by the geometric mean of the connections weakened_, and is not defined for systems at equilibrium (stable, unchanging networks) but is well defined for dynamic networks. 
-
 ## Project Roadmap
 
 Webb is currently _running_. All major bugs have been fixed and the core stack has been completed, but there are unimplemented features:

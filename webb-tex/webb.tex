@@ -1,0 +1,69 @@
+\documentclass[12pt]{article}
+\title{A simplified perturbing network model approximating discrete social network evolution and its behavior at scale}
+\author{Linus Lee}
+\date{\today}
+\usepackage{amssymb,amsmath}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+In this article we observe a simplified network model for simulating evolution of social networks. In this model, the future connection strengths between two nodes depends on the strengths of all possible paths between them, with the order of those paths determining their relative impact. We find that the computationally simple model creates a usable approximation for real-world scenarios through comparing certain elementary scenarios with their experimental counterparts. Then larger, more coupled networks are simulated to investigate the nature of larger, heavily coupled social networks such as those we observe in the heavily networked modern society.
+\end{abstract}
+
+\tableofcontents
+
+\section{The mathematical model}
+
+An approximate model of social networks is achieved by a simple algorithm modeling the behavior of true social networks.
+
+Specifically, the algorithm (the Interactive Sum Model, or the ISM) mimics the \textit{propagation} property of strengths of connections between nodes on a social network, that the future connection strength between nodes A and B will depend perturbatively on the strengths of ties connecting A and B to its common, shared nodes. 
+
+ISM models this behavior by the following equation, 
+
+\begin{equation}
+  S_{i + 1}(n_1, n_2) \propto \sum^{\infty}_{k = 0} \left[ \prod^{k}_{j = 0} S_i(n_0, n_k) \right]
+\end{equation}
+
+where $S_i (n_a, n_b)$ denotes the strength of direct connection between nodes $n_a$ and $n_b$, 
+
+\subsection{Perturbed influence hypothesis}
+
+The ISM model is based on a single operation dictating much of social development of an organic social network and creating emergent behavior, that simple operation being the \textit{perturbed influence hypothesis}. The PIH states that the future strengths of the direct connection between two nodes is influenced by the current strengths of connections between nodes that the two concerned nodes "share" in common. In other words, if node A and node B have "common friends", this relationship will work to strengthen their friendship. 
+
+\subsection{Mathematical formulation}
+
+\subsection{Balancing compute load in execution}
+
+\section{Computed networks and results}
+
+\subsection{Trivial networks}
+
+\subsection{Small networks}
+
+\subsection{Large and heavily coupled networks}
+
+\section{Resilient behavior}
+
+Contrary to many large-scale behaviors, social networks modeled by ISM does not lend itself easily to mathemtically chaotic behavior. In fact, under even relativy large-scale shifts in the network, over iterations, the networks converge on a single, stable \textit{social equilibrium point}. To observe this, three models were investigated.
+
+\subsection{The Uniformity Factor}
+
+To examine the tendency of ISM networks towards social equilibrium, let us define a \textit{uniformity factor} $\omega$ of a single iteration of a network as
+
+\begin{equation}
+\omega = \frac{\sqrt[n]{\prod^n_{k=1} \Delta \rho^+_k}}{\sqrt[m]{\prod^m_{k=1} \Delta \rho^-_k}}
+\end{equation}
+
+where $n$ and $m$ are the numbers of connections for which the connection strength was increased and decreased, respectively, and $\Delta \rho^+_k$ and $\Delta \rho^-_k$ as the previous connection strength of the $k$th connection for which the connection was increased and decreased, respectively.
+
+In other words, the uniformity factor $\omega$ of an ISM network is defined as the ratio of the geometric mean of increasing connection strengths to the geometric mean of decreasing connection strengths. 
+
+Naturally, an $\omega$ above 1 denotes that the system is net increasing in density and connectedness, while an $\omega$ lesser than 1 indicades a system tending towards weakening. 
+
+However, as a fundamental nature of ISM's tendency towards equilibrium, over iterations, the uniformity factor of any given ISM network will tend towards unity.
+
+\section{Conclusions}
+
+\end{document}

@@ -75,7 +75,6 @@ def uniformity(k)
   else 
     $ufactor = (pos[0].abs ** (1.0 / pos[1])) / (neg[0].abs ** (1.0 / neg[1]))
   end
-  puts "Order " + k.to_s + ": Uniformity Factor " + $ufactor.to_s
 end
 
 def normalize()
@@ -94,8 +93,6 @@ def normalize()
   end
   $network = Matrix.build(Size) {|row,col| setArray[row][col]}
 end
-
-puts $network.to_s
 
 for i in 1..10 do
   iterate()

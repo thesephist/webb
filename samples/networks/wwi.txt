@@ -1,0 +1,16 @@
+// webb sample: World War I alliances
+
+// Sharing borders was considered, as was alliances on entente and central powers
+// domestic instability is self-ties
+
+[  // RU,  DE,  FR,  OE,  IT,  SB,  GB,  US
+    [1.0, 0.0, 1.0, 0.0, 0.0, 0.6, 1.0, 1.0], // RU
+    [0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0], // DE
+    [1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1.0], // FR
+    [0.0, 1.0, 0.0, 0.8, 1.0, 0.0, 0.0, 0.0], // OE
+    [0.0, 1.0, 0.0, 1.0, 1.0, 0.0, 0.0, 0.0], // IT
+    [0.6, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0], // SB
+    [1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1.0], // GB
+    [1.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0, 1.0], // US
+]
+

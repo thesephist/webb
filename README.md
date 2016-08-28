@@ -14,18 +14,16 @@ Webb's core model is a perturbation model, where the strength of a connection be
 
 Webb is currently _running_. All major bugs have been fixed and the core stack has been completed, but there are unimplemented features:
 
-* Easier ways of visualizing simluated networks through time
-* Better normalization
 * Statistical testing and corrections based on data
-* Streamlining visualization of a dataset through time through the entire stack.
-* Multi-threaded simulation for networks with more than 20 nodes.
+* Speed-optimized simulation for networks with more than 20 nodes.
 
 ## Setup
 
-The full Webb "library" has two main parts: 
+The full Webb "library" has three main parts: 
 
-* ism.rb: Ruby script for computation
-* to\_graph.js: generating a visual output (SVG)
+* `ism.rb`: Ruby script for computation, and its derivatives focused on use cases
+* `to\_graph.js`: generating a visual output (SVG)
+* `to\_topology.js`: generating a visual CLI output for topology of a given network
 
 The ruby script runs inside a loop within the code, each time the network progressing 1 interval of time, and prints out the raw output of the network variable as a Ruby matrix object.
 
@@ -33,4 +31,4 @@ The raw output of the ruby script can be captured and directly fed into the SVG 
 
 ## Samples
 
-Within the repository there are some already tested samples availble with their source inputs inside samples/graphs/ and samples/networks/ respectively.
+Within the repository there are some already tested samples availble with their source inputs inside `samples/graphs/` and `samples/networks/` respectively.
